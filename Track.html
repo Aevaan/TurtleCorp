@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Turtle – TurtleCorp</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f7f9fc; color: #333; }
+    header { background-color: #004d40; color: white; padding: 20px; text-align: center; }
+    header img { max-width: 150px; display: block; margin: 0 auto 10px; }
+    nav { background-color: #00695c; display: flex; justify-content: center; }
+    nav a { color: white; padding: 15px 20px; text-decoration: none; font-weight: bold; }
+    nav a:hover { background-color: #004d40; }
+    .container { max-width: 800px; margin: auto; padding: 20px; text-align: center; }
+    input { padding: 10px; width: 70%; font-size: 1em; margin-bottom: 10px; }
+    button { padding: 10px 20px; font-size: 1em; background-color: #00695c; color: white; border: none; cursor: pointer; border-radius: 5px; }
+    button:hover { background-color: #004d40; }
+    .status-box { margin-top: 20px; padding: 15px; background: white; border-left: 5px solid #00695c; display: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="TurtleCorp Logo">
+    <h1>Track Your Turtle</h1>
+    <p>Real-time updates on your turtle’s journey to your heart</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="track.html">Track Your Order</a>
+  </nav>
+
+  <div class="container">
+    <p>Enter your 12-digit Turtle Tracking Number below:</p>
+    <input type="text" id="trackingNumber" placeholder="e.g. TURT12345678" maxlength="12">
+    <br>
+    <button onclick="trackTurtle()">Track</button>
+
+    <div class="status-box" id="statusBox"></div>
+  </div>
+
+  <script>
+    function trackTurtle() {
+      const trackingNumber = document.getElementById("trackingNumber").value.trim();
+      const statusBox = document.getElementById("statusBox");
+      statusBox.style.display = "block";
+
+      if (trackingNumber === "TURT25081599") {
+        statusBox.textContent = "Status: Shipped. Expected delivery Saturday, August 18th before 11:00 AM.";
+      } else {
+        statusBox.textContent = "Tracking number not found. Please check and try again.";
+      }
+    }
+  </script>
+
+</body>
+</html>
